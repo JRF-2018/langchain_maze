@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-07-17T02:49:55Z" -->
+<!-- Time-stamp: "2025-07-17T02:56:32Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -25,7 +25,7 @@ http://jrf.cocolog-nifty.com/statuses/2025/07/post-36be53.html
 
   * [《LangChain で熊剣迷路問題 Version 0.0.1 (vertexai)》](langchain_maze_vertexai_0_0_1.ipynb)。とにかく create_tool_calling_agent を使って動くところまでやってみた。ゴールはできなかった。
 
-  * [《LangChain で熊剣迷路問題 Version 0.0.1》](langchain_maze_0_0_1.ipynb)。とにかく create_tool_calling_agent を使って、LangChain で迷路が「偶然」ゴールできるところまでやってみた。
+  * [《LangChain で熊剣迷路問題 Version 0.0.1》](langchain_maze_0_0_1.ipynb)。とにかく create_tool_calling_agent を使って、LangChain で迷路が「偶然」ゴールできるところまでやってみた。あまりうまくいかないのは memory にツールコールの情報がないからか。
 
   * 《LangChain で熊剣迷路問題 Version 0.0.2》。まったくうまくいかない試みを繰り返していたので欠番。以降、0.0.3 からはきちんとゴールしてから公開している。
 
@@ -36,6 +36,11 @@ http://jrf.cocolog-nifty.com/statuses/2025/07/post-36be53.html
   * [《LangChain で熊剣迷路問題 Version 0.0.5》](langchain_maze_0_0_5.ipynb)。LangGraph 系の create_react_agent を使って実装。メモリにツールコールが残るため 1 invoke につき多 command でよいとした。これが現在の「決定版」。
 
   * [《LangChain で熊剣迷路問題 Version 0.0.6》](langchain_maze_0_0_6.ipynb)。1 invoke につき 1 command というのを stream という機能を使って実装してみた。それをする意味はあまりないが LangGraph 系ではそれが簡単にできることだけ示した。
+
+
+0.0.3 から 0.0.6 までは、どれも「間違った方法」ではないというのが私の認識。それぞれに良さがあり、バージョンナンバーが上だからといって、発展形ではない。
+
+一つだけ選べと言われたら 0.0.5 が今なら素直であると思う。しかし、0.0.3 や 0.0.4 や 0.0.6 のような方法で実装するほうがメモリの扱いなどにおいて適切な場合はあると思われる。
 
 
 ## Author
