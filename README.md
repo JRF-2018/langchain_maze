@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-08-15T01:56:35Z" -->
+<!-- Time-stamp: "2025-08-15T02:22:11Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -17,6 +17,9 @@ https://jrf-2018.github.io/langchain_maze/
 
 《熊剣迷路問題 revisited。2023年6月から7月に行った LLMにごく簡単な迷路ゲームを解かせる実験。2025年の今、進化したツール類を使って再挑戦。  - JRF のひとこと》  
 http://jrf.cocolog-nifty.com/statuses/2025/07/post-36be53.html
+
+《LLM のメモリ機能の試験実装を行った。かなり本格的な実装(のモックアップ)になるようこころがけた。実装できたことはできたのだが、いまいち Gemini さんは積極的に使ってくれなかった。そこはアテが外れた。 - JRF のひとこと》  
+http://jrf.cocolog-nifty.com/statuses/2025/08/post-881b46.html
 
 
 ## ファイル集
