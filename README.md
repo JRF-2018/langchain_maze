@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-08-15T02:22:11Z" -->
+<!-- Time-stamp: "2025-08-18T13:16:34Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -48,6 +48,8 @@ http://jrf.cocolog-nifty.com/statuses/2025/08/post-881b46.html
 あと、追加の実験として↓を行った。
 
   * [《LLM のメモリの試験実装 Version 0.0.1》](experimental_memory_0_0_1.ipynb)。かなり本格的なメモリ機能を試験実装してみた。とりあえずの試験実装にどういう例がいいか悩んだのだが、熊剣迷路問題を結局は使うことにしたので、このページに並べておくことにする。LangChain で熊剣迷路問題 version 0.0.7 相当という位置付け。
+
+  * [《LLM のメモリの試験実装 Version 0.0.2》](experimental_memory_0_0_2.ipynb)。`update_plan` や `get_full_map` というメモリ機能で実現できるはずのツールを削り、メモリ機能を代わりに使うよう促してみた。が、うまくいかなかった。LangChain で熊剣迷路問題 version 0.0.8 相当という位置付け。
 
 
 ## Author
