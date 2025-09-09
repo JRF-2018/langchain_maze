@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-08-18T13:16:34Z" -->
+<!-- Time-stamp: "2025-09-09T04:06:05Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -21,8 +21,13 @@ http://jrf.cocolog-nifty.com/statuses/2025/07/post-36be53.html
 《LLM のメモリ機能の試験実装を行った。かなり本格的な実装(のモックアップ)になるようこころがけた。実装できたことはできたのだが、いまいち Gemini さんは積極的に使ってくれなかった。そこはアテが外れた。 - JRF のひとこと》  
 http://jrf.cocolog-nifty.com/statuses/2025/08/post-881b46.html
 
+《「LLM のメモリ機能を強制的に使うバンディットマシンの試験実装」と「LLM のメモリ機能とバンディット機能の試験実装」を行った。後者がメインの成果物で、メモリ機能の使用増加をどう強制するかから拡張したフレームワーク。 - JRF のひとこと》  
+http://jrf.cocolog-nifty.com/statuses/2025/09/post-8225e2.html
+
 
 ## ファイル集
+
+### 熊剣迷路問題 revisited
 
   * [《Gemini で簡単な迷路ゲームを教師付きで無理やりクリアさせてみた》](gemini_maze_0_0_1.ipynb)。前の BardAPI を使ったものを単に Gemini API を使わせてやらせてみた。簡単にゴールできた。これは[前回](http://jrf.cocolog-nifty.com/statuses/2023/07/post-619804.html)までの成果で、今回本来は公開する予定はなかったので、整理されてないのはご容赦ください。
 
@@ -47,9 +52,17 @@ http://jrf.cocolog-nifty.com/statuses/2025/08/post-881b46.html
 
 あと、追加の実験として↓を行った。
 
+### メモリ機能の試験実装
+
   * [《LLM のメモリの試験実装 Version 0.0.1》](experimental_memory_0_0_1.ipynb)。かなり本格的なメモリ機能を試験実装してみた。とりあえずの試験実装にどういう例がいいか悩んだのだが、熊剣迷路問題を結局は使うことにしたので、このページに並べておくことにする。LangChain で熊剣迷路問題 version 0.0.7 相当という位置付け。
 
   * [《LLM のメモリの試験実装 Version 0.0.2》](experimental_memory_0_0_2.ipynb)。`update_plan` や `get_full_map` というメモリ機能で実現できるはずのツールを削り、メモリ機能を代わりに使うよう促してみた。が、うまくいかなかった。LangChain で熊剣迷路問題 version 0.0.8 相当という位置付け。
+
+### バンディット機能の試験実装
+
+  * [《LLM のメモリ機能を強制的に使うバンディットマシンの試験実装 Version 0.0.1》](experimental_bandit_0_0_1.ipynb)。メモリ機能をなかなか使ってくれないので悩んでいたところ、ChatGPT さんが記憶操作のバンディットマシンを作るのを提案してくれた。それを実装してみたもの。LangChain で熊剣迷路問題 version 0.0.9 相当という位置付け。
+
+  * [《LLM のメモリ機能とバンディット機能の試験実装 Version 0.0.1》](experimental_bandit_tool_0_0_1.ipynb)。バンディットに特定のツールを登録するツールみたいなのを用意して、どういうツールを強制して数を増やして欲しいかを AI さん自身が決められると良いのかも…というアイデアを実装したもの。LangChain で熊剣迷路問題 version 0.0.10 相当という位置付け。
 
 
 ## Author
@@ -61,7 +74,7 @@ JRF ( http://jrf.cocolog-nifty.com/statuses , Twitter (X): @jion_rockford )
 
 基本短いコードなので(私が作った部分は)パブリックドメインのつもりです。気になる方は MIT License として扱ってください。
 
-かなり AI さん達(Gemini さんや Claude さん)に教わって作っています。
+かなり AI さん達(Gemini さんや Claude さんや ChatGPT さんや Grok さん)に教わって作っています。
 
 ----
 (This document is mainly written in Japanese/UTF8.)
