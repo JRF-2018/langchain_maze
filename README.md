@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-09-09T04:06:05Z" -->
+<!-- Time-stamp: "2025-09-11T09:06:06Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -64,6 +64,9 @@ http://jrf.cocolog-nifty.com/statuses/2025/09/post-8225e2.html
 
   * [《LLM のメモリ機能とバンディット機能の試験実装 Version 0.0.1》](experimental_bandit_tool_0_0_1.ipynb)。バンディットに特定のツールを登録するツールみたいなのを用意して、どういうツールを強制して数を増やして欲しいかを AI さん自身が決められると良いのかも…というアイデアを実装したもの。LangChain で熊剣迷路問題 version 0.0.10 相当という位置付け。
 
+  * 《LLM のメモリ機能とバンディット機能とワークフロー機能の試験実装 Version 0.0.1》。MemoryBanditWorkflow を分ける前の仮実装のため欠番。
+
+  * [《LLM のメモリ機能とバンディット機能とワークフロー機能の試験実装 Version 0.0.2》](experimental_bandit_workflow_0_0_2.ipynb)。ワークフローも定義できるようにしてみた。これまでの `bandit_list` を `workflow:main` のようにする実装で自然な拡張になっていると思う。LangChain で熊剣迷路問題 version 0.0.12 相当という位置付け。
 
 ## Author
 
