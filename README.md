@@ -1,6 +1,6 @@
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2025-09-22T06:35:32Z" -->
+<!-- Time-stamp: "2026-02-03T16:29:56Z" -->
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -75,6 +75,14 @@ http://jrf.cocolog-nifty.com/statuses/2025/09/post-8225e2.html
 
   * [《MemoryBanditWorkflow を使った RAG の試験実装 Version 0.0.2》](experimental_rag_0_0_2.ipynb)。0.0.1 からは RAG のループを少し変えて、一章ごと取材・執筆をするように指示を出し、バンディットが呼ばれやすくならないか試してみた。MemoryBanditWorkflow は変えてない。LangChain で熊剣迷路問題 version 0.0.14 相当という位置付け。
 
+
+### LangChain 1.x 系への対応とサブツールの導入
+
+langchain_maze と experimental_rag を LangChain 1.x 系に対応させ、さらにはやりの skills やツールボックスなどの導入に相当する subtool_do の導入も行った。
+
+  * [《LangChain 1.x 系で熊剣迷路問題》](langchain_maze_0_0_15.ipynb)。LangChain 1.x 系に対応し、subtool_do と subtool_show を導入した。LangChain で熊剣迷路問題 version 0.0.15 相当という位置付け。
+
+  * [《MemoryBanditWorkflow を使った RAG の試験実装 (LangChain 1.x系)》](experimental_rag_0_0_16.ipynb)。上で変更された MemoryBanditWorkflow でも RAG させてみた。LangChain で熊剣迷路問題 version 0.0.16 相当という位置付け。
 
 
 ## Author
