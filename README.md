@@ -1,6 +1,9 @@
+# Bear-Sword Maze Problem Revisited (with MemoryBanditWorkflow)
 # 熊剣迷路問題 revisited
 
-<!-- Time-stamp: "2026-02-03T16:29:56Z" -->
+<!-- Time-stamp: "2026-02-12T18:55:35Z" -->
+
+**Note to English speakers: This repository now includes English documentation and notebook versions. Please see the English Section at the bottom of this page for details.**
 
 まず Gist で公開したものですが、AI が読みやすいよう HTML 化するため、このレポジトリを作りました。自動 HTML 化のワークフローは Gemini 2.5 Flash さん製です。
 
@@ -23,6 +26,9 @@ http://jrf.cocolog-nifty.com/statuses/2025/08/post-881b46.html
 
 《「LLM のメモリ機能を強制的に使うバンディットマシンの試験実装」と「LLM のメモリ機能とバンディット機能の試験実装」を行った。後者がメインの成果物で、メモリ機能の使用増加をどう強制するかから拡張したフレームワーク。 - JRF のひとこと》  
 http://jrf.cocolog-nifty.com/statuses/2025/09/post-8225e2.html
+
+《MemoryBanditWorkflow (参: \[cocolog:95619779\](2025年9月)) を Claude Code などの SKILL.md などを利用して実現するにはどうすればいいか。試みに Claude さん自身に聞いてみた。 - JRF のひとこと》  
+http://jrf.cocolog-nifty.com/statuses/2026/01/post-b86e58.html
 
 
 ## ファイル集
@@ -85,16 +91,61 @@ langchain_maze と experimental_rag を LangChain 1.x 系に対応させ、さ�
   * [《MemoryBanditWorkflow を使った RAG の試験実装 (LangChain 1.x系)》](experimental_rag_0_0_16.ipynb)。上で変更された MemoryBanditWorkflow でも RAG させてみた。LangChain で熊剣迷路問題 version 0.0.16 相当という位置付け。
 
 
+### 英語への翻訳
+
+英語版もいちおう作ってみた。
+
+  * [《Bear-Sword Maze Problem with LangChain 1.x》](langchain_maze_en_0_0_15.ipynb)。英語実装。熊剣迷路問題 version 0.0.15 相当という位置付けのまま。
+
+  * [《Experimental RAG Implementation using MemoryBanditWorkflow (LangChain 1.x)》](experimental_rag_en_0_0_16.ipynb)。英語実装。LangChain で熊剣迷路問題 version 0.0.16 相当という位置付けのまま。
+
+
+## English Version Overview
+
+This section provides an overview of the English-language assets added in the latest versions (v0.0.15.x - v0.0.16.x).
+
+### Core Concept: MemoryBanditWorkflow
+
+MemoryBanditWorkflow is an agent framework designed to tackle the limitations of "stateless" LLM APIs. It incorporates:
+
+  * **Forced Memory Utilization**: Using a Bandit approach to encourage the agent to use memory search tools.
+
+  * **State-Machine Driven Workflows**: Allowing agents to follow structured phases (e.g., Planning -> Research -> Writing -> Verification).
+
+  * **Sub-tools (On-demand Skills)**: A unique architecture where only a `subtool_do command` is in the initial context, and the agent "discovers" detailed skill documentation via `subtool_show` (similar to reading a `SKILL.md`).
+
+### RagAgent: Autonomous Thesis Writing
+
+In the latest update, we demonstrate the versatility of the framework by implementing `RagAgent`. This agent performs autonomous RAG (Retrieval-Augmented Generation) to:
+
+  1. Research a complex topic (e.g., "Japan's Lost Decades") via web search.
+
+  2. Store findings in a simulated database (spoofed by the LLM).
+
+  3. Write a structured, multi-chapter thesis in Markdown.
+
+English Files
+
+  * [《Bear-Sword Maze Problem with LangChain 1.x》](langchain_maze_en_0_0_15.ipynb): The foundational maze-solving agent with English prompts and interface.
+
+  *  [《Experimental RAG Implementation using MemoryBanditWorkflow (LangChain 1.x)》](experimental_rag_en_0_0_16.ipynb): The complete English implementation of the RAG thesis-writing agent.
+
+
 ## Author
 
 JRF ( http://jrf.cocolog-nifty.com/statuses , Twitter (X): @jion_rockford )
 
-
-## License
+## License (in Japanese)
 
 基本短いコードなので(私が作った部分は)パブリックドメインのつもりです。気になる方は MIT License として扱ってください。
 
 かなり AI さん達(Gemini さんや Claude さんや ChatGPT さんや Grok さん)に教わって作っています。
+
+## License (in English)
+
+Since the code is relatively short, I intended for my parts to be in the Public Domain. If you have concerns, please treat it under the MIT License.
+
+This was developed with significant guidance from various AIs (Gemini, ChatGPT, Claude, and Grok).
 
 ----
 (This document is mainly written in Japanese/UTF8.)
